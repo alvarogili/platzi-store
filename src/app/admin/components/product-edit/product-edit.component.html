@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Producto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class=row>
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Título" formControlName="title" matInput type="text">     
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class=row>
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Precio" formControlName="price" matInput type="number">   
+                    </mat-form-field>      
+                    <div *ngIf="priceField.invalid && priceField.dirty">
+                        <p *ngIf="priceField.invalid">Este campo no es válido</p>
+                        <p *ngIf="priceField.required">Este campo es requerido</p>
+                    </div>              
+                </div>                
+            </div>
+            <div class=row>
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Imágen" formControlName="image" matInput type="text">     
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class=row>
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea placeholder="Descripción" matInput formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit" >Guardar</button>
+        </mat-card-actions>
+    </mat-card>    
+</form>

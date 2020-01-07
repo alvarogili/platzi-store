@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,18 +15,19 @@ import { MaterialModule } from '../material/material.module';
     ExponentialPipe,
     HeaderComponent,
     FooterComponent,
-    HighlightDirective
+    HighlightDirective,
   ],
   exports: [
     ExponentialPipe,
     HeaderComponent,
     FooterComponent,
-    HighlightDirective
+    HighlightDirective,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
